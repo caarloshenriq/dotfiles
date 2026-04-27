@@ -30,6 +30,8 @@
     tor
     act
     firefox
+    vesktop
+    obsidian
   ];
 
   programs.home-manager.enable = true;

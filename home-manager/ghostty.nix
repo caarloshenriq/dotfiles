@@ -3,7 +3,6 @@
 {
   programs.ghostty = {
     enable = true;
-    package = null; # not packaged for aarch64-darwin in nixpkgs; brew cask provides the binary
     settings = {
       # Font
       font-size = 14;

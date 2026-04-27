@@ -19,5 +19,8 @@ fi
 echo "==> Applying home-manager configuration..."
 nix run home-manager/master -- switch --flake .#carlin
 
+echo "==> install rust 1.85 version"
+rustup toolchain install 1.85.0
+
 echo ""
 echo "✓ Setup complete! Restart your terminal or run: exec zsh"

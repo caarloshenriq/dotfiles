@@ -1,72 +1,82 @@
 { ... }:
+
 {
   programs.git = {
     enable = true;
 
-    # User git configuration
-    userName = "Carlos Santos";
-    userEmail = "rickhenriquetab@gmail.com";
+    signing = {
+      format = "openpgp";
+    };
 
     ignores = [
       "debug/"
       "target/"
 
-      # Helix
       ".helix/"
-
-      # Zed
       ".zed/"
-
-      # VSCode Workspace Folder
       ".vscode/"
-
-      #Jetbrains
       ".idea/"
 
-      # Golang
       ".gocache/"
       ".gomodcache/"
 
-      # Python
       "*.pyc"
       "*.egg"
       "*.out"
       "venv/"
       "**/**/__pycache__/"
 
-      # direnv
       ".direnv"
       ".envrc"
 
-      # NodeJS/Web dev
       ".env/"
       "node_modules"
       ".sass-cache"
 
-      # Claude
       "**/.claude/settings.local.json"
 
-      #ignore my own just commands, bc some projects only uses make...
       ".justfile"
     ];
 
-    extraConfig = {
-      init.defaultBranch = "main";
-      core.editor = "vim";
+    settings = {
+      user = {
+        name = "Carlos Santos";
+        email = "rickhenriquetab@gmail.com";
+        signingkey = "0x82B003D3ABB16152";
+      };
 
-      # Delta pager options (core.pager and interactive.diffFilter are set automatically by programs.git.delta)
-      merge.conflictstyle = "diff3";
-      diff.colorMoved = "default";
+      init = {
+        defaultBranch = "main";
+      };
 
-      # GPG signing configuration
-      user.signingkey = "0x82B003D3ABB16152";
-      commit.gpgsign = true;
-      tag.gpgsign = true;
-      gpg.program = "gpg";
+      core = {
+        editor = "vim";
+      };
 
-      push.autoSetupRemote = true;
+      merge = {
+        conflictstyle = "diff3";
+      };
 
-      # Git aliases
+      diff = {
+        colorMoved = "default";
+      };
+
+      commit = {
+        gpgsign = true;
+      };
+
+      tag = {
+        gpgsign = true;
+      };
+
+      gpg = {
+        program = "gpg";
+      };
+
+      push = {
+        autoSetupRemote = true;
+      };
+
       alias = {
         a = "add";
         cm = "commit";
@@ -76,15 +86,17 @@
         ca = "commit --amend";
       };
     };
+  };
 
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        side-by-side = true;
-        line-numbers = true;
-        syntax-theme = "ansi";
-      };
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+
+    options = {
+      navigate = true;
+      side-by-side = true;
+      line-numbers = true;
+      syntax-theme = "ansi";
     };
   };
 }
