@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
+    inputs.plasma-manager.homeModules.plasma-manager
+    ./kde.nix
     ./git.nix
     ./zed.nix
     ./gpg.nix
@@ -32,6 +34,8 @@
     firefox
     vesktop
     obsidian
+    vivaldi
+    copyq
   ];
 
   programs.home-manager.enable = true;

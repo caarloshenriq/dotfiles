@@ -5,7 +5,7 @@
     enable = true;
     extensions = [
       "nix"
-      "dracula"
+      "catppuccin"
       "catppuccin-icons"
       "git-firefly"
       "typst"
