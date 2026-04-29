@@ -10,12 +10,10 @@
       # Window
       background-opacity = 0.95;
       background-blur-radius = 20;
-      macos-titlebar-style = "hidden"; # removes title bar on macOS
       maximize = true;
-      macos-option-as-alt = true; # Option key behaves as Alt for terminal keybindings
 
       # Theme
-      theme = "Dracula";
+      theme = "catppuccin-mocha";
 
       # Shell
       shell-integration = "zsh";
