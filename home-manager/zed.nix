@@ -30,6 +30,9 @@
     ];
 
     userSettings = {
+      ui_font_family = "Fira Code";
+      buffer_font_family = "Fira Code";
+      buffer_font_size = 14;
       telemetry = {
         metrics = false;
         diagnostics = false;

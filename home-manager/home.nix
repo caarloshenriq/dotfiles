@@ -36,6 +36,7 @@
     obsidian
     vivaldi
     copyq
+    fira-code
   ];
 
   programs.home-manager.enable = true;
