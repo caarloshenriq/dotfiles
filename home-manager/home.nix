@@ -12,6 +12,8 @@
     ./zsh.nix
     ./ghostty.nix
     ./atuin.nix
+    ./clis.nix
+    ./tuis.nix
   ];
 
   home.username = "carlin";
@@ -30,7 +32,7 @@
     dotnet-sdk_8
     vial
     tor
-    act
+    tor-browser
     firefox
     vesktop
     obsidian
