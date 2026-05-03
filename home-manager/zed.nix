@@ -37,6 +37,9 @@
         metrics = false;
         diagnostics = false;
       };
+      project_panel = {
+        dock = "left";
+      };
       terminal = {
         shell = {
           program = "bash";

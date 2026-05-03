@@ -10,7 +10,6 @@
       llvm
       ninja
       pkg-config
-      qt6.full
       sqlfluff
       torsocks
       tree

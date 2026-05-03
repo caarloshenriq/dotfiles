@@ -39,7 +39,12 @@
     vivaldi
     copyq
     fira-code
+    catppuccin-kde
   ];
+
+  home.sessionVariables = {
+    SHELL = "${pkgs.zsh}/bin/zsh";
+  };
 
   programs.home-manager.enable = true;
 }

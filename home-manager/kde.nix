@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   xdg.mimeApps = {
     enable = true;
@@ -10,6 +10,10 @@
       "x-scheme-handler/unknown" = "vivaldi-stable.desktop";
     };
   };
+
+  home.packages = with pkgs; [
+    catppuccin-kde
+  ];
 
   home.file = {
     ".local/share/wallpapers/degirled.png".source = builtins.fetchurl {
@@ -24,10 +28,22 @@
     };
   };
 
+  # Zsh as default shell
+  home.sessionVariables = {
+    SHELL = "${pkgs.zsh}/bin/zsh";
+  };
+
   programs.plasma = {
     enable = true;
+
+    # Date and time in American format
+    configFile."plasma-localerc"."Formats".LC_TIME = "en_US.UTF-8";
+
+    # Lock screen wallpaper
+    configFile."kscreenlockerrc"."Greeter/Wallpaper/org.kde.image/General".Image = "/home/carlin/.local/share/wallpapers/lantern.png";
+
     workspace = {
-      lookAndFeel = "org.kde.breezedark.desktop";
+      lookAndFeel = "com.github.catppuccin.mocha";
       colorScheme = "BreezeDark";
       theme = "breeze-dark";
       wallpaper = "/home/carlin/.local/share/wallpapers/degirled.png";

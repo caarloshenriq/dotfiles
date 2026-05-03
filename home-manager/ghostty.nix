@@ -13,7 +13,7 @@
       maximize = true;
 
       # Theme
-      theme = "catppuccin-mocha";
+      theme = "Catppuccin Mocha";
 
       # Shell
       shell-integration = "zsh";
